@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    padding-bottom: 50px;
+}
+
+.header {
+    background: linear-gradient(135deg, #8b0000, #e63946);
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+}
+
+.header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.categories {
+    display: flex;
+    overflow-x: auto;
+    padding: 15px;
+    gap: 10px;
+    scrollbar-width: none;
+}
+
+.categories::-webkit-scrollbar {
+    display: none;
+}
+
+.cat-btn {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 8px 18px;
+    border-radius: 20px;
+    white-space: nowrap;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cat-btn.active, .cat-btn:hover {
+    background-color: #e63946;
+    color: white;
+    border-color: #e63946;
+}
+
+.menu-container {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.menu-card img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+}
+
+.menu-info {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.menu-info h3 {
+    font-size: 1.1rem;
+    color: #222;
+}
+
+.menu-info p {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+.price {
+    font-weight: 700;
+    color: #e63946;
+    font-size: 1.1rem;
+    margin-top: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #888;
+}
