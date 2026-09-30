@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayntap - Dijital Menü</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Banner -->
+    <header class="header">
+        <div class="logo-area">
+            <h1>AYNTAP</h1>
+            <p>Lezzetin Dijital Menüsü</p>
+        </div>
+    </header>
+
+    <!-- Kategori Filtreleri -->
+    <nav class="categories">
+        <button class="cat-btn active" onclick="filterMenu('all')">Tümü</button>
+        <button class="cat-btn" onclick="filterMenu('kebap')">Kebaplar</button>
+        <button class="cat-btn" onclick="filterMenu('tatli')">Tatlilar</button>
+        <button class="cat-btn" onclick="filterMenu('icecek')">İçecekler</button>
+    </nav>
+
+    <!-- Menü Liste Alanı -->
+    <main class="menu-container" id="menu-list">
+        <!-- Ürünler JS ile otomatik eklenecek -->
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Ayntap - Masa Numarası için QR/NFC Okutunuz</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
