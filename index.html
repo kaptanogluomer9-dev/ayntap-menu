@@ -4,26 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayıntap Tatlı Salonu - Menü</title>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --pistachio-dark: #12372A;
             --pistachio-main: #2D6A4F;
-            --pistachio-light: #52B788;
             --pistachio-soft: #D8F3DC;
             --cream-bg: #FBF9F1;
             --card-bg: #FFFFFF;
             --gold-accent: #D4AF37;
             --text-dark: #1E2923;
             --text-muted: #6C757D;
-            --shadow: 0 10px 30px rgba(18, 55, 42, 0.08);
-            --radius: 16px;
+            --shadow: 0 4px 15px rgba(18, 55, 42, 0.08);
+            --radius: 14px;
         }
 
         * {
@@ -36,88 +32,438 @@
             font-family: 'Poppins', sans-serif;
             background-color: var(--cream-bg);
             color: var(--text-dark);
-            line-height: 1.6;
-            padding-bottom: 40px;
+            line-height: 1.5;
+            padding-bottom: 30px;
         }
 
-        /* Hero / Header Section */
         header {
             background: linear-gradient(135deg, var(--pistachio-dark) 0%, #092017 100%);
             color: #ffffff;
             text-align: center;
-            padding: 45px 20px 35px;
-            position: relative;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            padding: 35px 20px 25px;
             border-bottom: 4px solid var(--gold-accent);
-        }
-
-        .header-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .logo-icon {
-            font-size: 2.5rem;
-            color: var(--gold-accent);
-            margin-bottom: 8px;
         }
 
         header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
-            font-weight: 700;
-            letter-spacing: 1px;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
             color: #ffffff;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         header p.subtitle {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: var(--pistachio-soft);
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            font-weight: 300;
         }
 
-        /* Container */
         .container {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
-        /* Search Bar & Filters */
         .controls {
-            margin: 25px 0 20px;
+            margin: 20px 0 15px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
         .search-box {
-            position: relative;
             width: 100%;
         }
 
         .search-box input {
             width: 100%;
-            padding: 14px 20px 14px 45px;
-            border-radius: 30px;
-            border: 2px solid #e2e8f0;
+            padding: 12px 18px;
+            border-radius: 25px;
+            border: 1px solid #c8d6ce;
             outline: none;
             font-size: 0.95rem;
             font-family: inherit;
-            transition: all 0.3s ease;
             background: #ffffff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
         .search-box input:focus {
             border-color: var(--pistachio-main);
-            box-shadow: 0 4px 15px rgba(45, 106, 79, 0.15);
         }
 
-        .search-box i {
-            position: absolute;
-            left: 18px;
-            top:
+        .categories {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+            scrollbar-width: none;
+        }
+
+        .categories::-webkit-scrollbar {
+            display: none;
+        }
+
+        .cat-btn {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            border: 1px solid #d0dad4;
+            padding: 7px 16px;
+            border-radius: 20px;
+            white-space: nowrap;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .cat-btn.active, .cat-btn:hover {
+            background-color: var(--pistachio-main);
+            color: #ffffff;
+            border-color: var(--pistachio-main);
+        }
+
+        .menu-section {
+            margin-top: 20px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            color: var(--pistachio-dark);
+            margin-bottom: 12px;
+            border-bottom: 2px solid #d8e4dd;
+            padding-bottom: 4px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 12px;
+        }
+
+        .menu-item {
+            background-color: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 14px 16px;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(45, 106, 79, 0.08);
+        }
+
+        .item-info {
+            flex: 1;
+            padding-right: 10px;
+        }
+
+        .item-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .item-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .item-price {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--pistachio-dark);
+            white-space: nowrap;
+            background-color: var(--pistachio-soft);
+            padding: 4px 12px;
+            border-radius: 16px;
+        }
+
+        .item-price.free {
+            background-color: #FEF3C7;
+            color: #B45309;
+        }
+
+        .badge-ikram {
+            font-size: 0.68rem;
+            background: #FEF3C7;
+            color: #92400E;
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 1px solid #FDE68A;
+        }
+
+        footer {
+            margin-top: 35px;
+            text-align: center;
+            padding: 15px;
+            border-top: 1px solid #e0e6e3;
+        }
+
+        .brand-signature {
+            font-size: 0.85rem;
+            color: var(--pistachio-dark);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 30px 10px;
+            color: var(--text-muted);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>AYINTAP</h1>
+        <p class="subtitle">Tatlı Salonu</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Tatlı ara... (ör. Künefe, Baklava)">
+            </div>
+            
+            <div class="categories">
+                <button class="cat-btn active" onclick="filterCategory('all', this)">Tümü</button>
+                <button class="cat-btn" onclick="filterCategory('kunefe', this)">Künefeler</button>
+                <button class="cat-btn" onclick="filterCategory('kadayif', this)">Kadayıflar</button>
+                <button class="cat-btn" onclick="filterCategory('baklava', this)">Baklavalar</button>
+                <button class="cat-btn" onclick="filterCategory('katmer', this)">Katmerler</button>
+                <button class="cat-btn" onclick="filterCategory('ikram', this)">İkramlar</button>
+            </div>
+        </div>
+
+        <div id="menuContainer">
+
+            <!-- Künefeler -->
+            <div class="menu-section" data-category="kunefe">
+                <h2 class="section-title">Künefeler</h2>
+                <div class="grid">
+                    <div class="menu-item" data-name="künefe klasik kunefe">
+                        <div class="item-info">
+                            <div class="item-title">Künefe Klasik</div>
+                            <div class="item-desc">Çıtır kadayıf ve özel peynir ile</div>
+                        </div>
+                        <div class="item-price">250 ₺</div>
+                    </div>
+                    
+                    <div class="menu-item" data-name="hasır künefe hasir kunefe">
+                        <div class="item-info">
+                            <div class="item-title">Hasır Künefe</div>
+                            <div class="item-desc">Bol fıstıklı, özel ince telli hasır sarım</div>
+                        </div>
+                        <div class="item-price">300 ₺</div>
+                    </div>
+
+                    <div class="menu-item" data-name="billuriye künefe billuriye kunefe">
+                        <div class="item-info">
+                            <div class="item-title">Billuriye Künefe</div>
+                            <div class="item-desc">Hafif pişirilmiş, bol Antep fıstıklı lezzet</div>
+                        </div>
+                        <div class="item-price">300 ₺</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kadayıflar -->
+            <div class="menu-section" data-category="kadayif">
+                <h2 class="section-title">Kadayıflar</h2>
+                <div class="grid">
+                    <div class="menu-item" data-name="kadayıf klasik kadayif">
+                        <div class="item-info">
+                            <div class="item-title">Kadayıf Klasik</div>
+                            <div class="item-desc">Geleneksel lezzetinde altın sarısı kadayıf</div>
+                        </div>
+                        <div class="item-price">250 ₺</div>
+                    </div>
+
+                    <div class="menu-item" data-name="burma kadayıf burma kadayif">
+                        <div class="item-info">
+                            <div class="item-title">Burma Kadayıf</div>
+                            <div class="item-desc">Fıstık dolgulu burma kadayıf</div>
+                        </div>
+                        <div class="item-price">250 ₺</div>
+                    </div>
+
+                    <div class="menu-item" data-name="billuriye kadayıf billuriye kadayif">
+                        <div class="item-info">
+                            <div class="item-title">Billuriye Kadayıf</div>
+                            <div class="item-desc">Özel pişirme tekniğiyle bol fıstıklı billuriye</div>
+                        </div>
+                        <div class="item-price">300 ₺</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Baklavalar -->
+            <div class="menu-section" data-category="baklava">
+                <h2 class="section-title">Baklavalar</h2>
+                <div class="grid">
+                    <div class="menu-item" data-name="klasik baklava fıstıklı baklava">
+                        <div class="item-info">
+                            <div class="item-title">Klasik Baklava</div>
+                            <div class="item-desc">Antep fıstıklı geleneksel baklava</div>
+                        </div>
+                        <div class="item-price">250 ₺</div>
+                    </div>
+
+                    <div class="menu-item" data-name="cevizli baklava">
+                        <div class="item-info">
+                            <div class="item-title">Cevizli Baklava</div>
+                            <div class="item-desc">Taze ceviz içi ile hazırlanan çıtır baklava</div>
+                        </div>
+                        <div class="item-price">200 ₺</div>
+                    </div>
+
+                    <div class="menu-item" data-name="midye baklava">
+                        <div class="item-info">
+                            <div class="item-title">Midye Baklava</div>
+                            <div class="item-desc">Yoğun kaymak ve bol Antep fıstığı harmanıyla</div>
+                        </div>
+                        <div class="item-price">250 ₺</div>
+                    </div>
+
+                    <div class="menu-item" data-name="antep özel antep ozel">
+                        <div class="item-info">
+                            <div class="item-title">Antep Özel</div>
+                            <div class="item-desc">Ekstra bol Antep fıstıklı özel baklava kesimi</div>
+                        </div>
+                        <div class="item-price">250 ₺</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Katmerler -->
+            <div class="menu-section" data-category="katmer">
+                <h2 class="section-title">Katmerler</h2>
+                <div class="grid">
+                    <div class="menu-item" data-name="katmer klasik">
+                        <div class="item-info">
+                            <div class="item-title">Katmer</div>
+                            <div class="item-desc">İncecik çıtır yufka, taze kaymak ve fıstık</div>
+                        </div>
+                        <div class="item-price">300 ₺</div>
+                    </div>
+
+                    <div class="menu-item" data-name="tepsi katmeri tepsi katmer">
+                        <div class="item-info">
+                            <div class="item-title">Tepsi Katmeri</div>
+                            <div class="item-desc">Özel tepside pişen nefis katmer lezzeti</div>
+                        </div>
+                        <div class="item-price">250 ₺</div>
+                    </div>
+
+                    <div class="menu-item" data-name="çubuk katmer cubuk katmer">
+                        <div class="item-info">
+                            <div class="item-title">Çubuk Katmer</div>
+                            <div class="item-desc">Rulo şeklinde sarılmış bol kaymaklı çıtır katmer</div>
+                        </div>
+                        <div class="item-price">300 ₺</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İkramlar -->
+            <div class="menu-section" data-category="ikram">
+                <h2 class="section-title">İkramlar</h2>
+                <div class="grid">
+                    <div class="menu-item" data-name="çay çay ikramı cay ikram">
+                        <div class="item-info">
+                            <div class="item-title">
+                                Çay
+                                <span class="badge-ikram">İkramımızdır</span>
+                            </div>
+                            <div class="item-desc">Taze demlenmiş sıcak çay</div>
+                        </div>
+                        <div class="item-price free">Ücretsiz</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="no-results" id="noResults">
+            <p>Aradığınız ürün bulunamadı.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="brand-signature">zenkcard - Ömer Kaptanoğlu</div>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const menuSections = document.querySelectorAll('.menu-section');
+        const menuItems = document.querySelectorAll('.menu-item');
+        const noResults = document.getElementById('noResults');
+
+        searchInput.addEventListener('input', function(e) {
+            const query = e.target.value.toLocaleLowerCase('tr-TR').trim();
+            let hasMatch = false;
+
+            if (query.length > 0) {
+                document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
+            }
+
+            menuItems.forEach(item => {
+                const name = item.getAttribute('data-name').toLocaleLowerCase('tr-TR');
+                const title = item.querySelector('.item-title').textContent.toLocaleLowerCase('tr-TR');
+                
+                if (name.includes(query) || title.includes(query)) {
+                    item.style.display = 'flex';
+                    hasMatch = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            menuSections.forEach(section => {
+                let anyVisible = false;
+                section.querySelectorAll('.menu-item').forEach(item => {
+                    if (item.style.display !== 'none') {
+                        anyVisible = true;
+                    }
+                });
+                section.style.display = anyVisible ? 'block' : 'none';
+            });
+
+            noResults.style.display = hasMatch ? 'none' : 'block';
+        });
+
+        function filterCategory(category, btn) {
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            if(btn) btn.classList.add('active');
+
+            searchInput.value = '';
+            noResults.style.display = 'none';
+
+            menuSections.forEach(section => {
+                const items = section.querySelectorAll('.menu-item');
+                items.forEach(item => item.style.display = 'flex');
+
+                if (category === 'all') {
+                    section.style.display = 'block';
+                } else {
+                    if (section.getAttribute('data-category') === category) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
