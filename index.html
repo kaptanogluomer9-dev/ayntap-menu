@@ -3,38 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayntap - Dijital Menü</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <title>Ayıntap Tatlı Salonu - Menü</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --pistachio-dark: #12372A;
+            --pistachio-main: #2D6A4F;
+            --pistachio-light: #52B788;
+            --pistachio-soft: #D8F3DC;
+            --cream-bg: #FBF9F1;
+            --card-bg: #FFFFFF;
+            --gold-accent: #D4AF37;
+            --text-dark: #1E2923;
+            --text-muted: #6C757D;
+            --shadow: 0 10px 30px rgba(18, 55, 42, 0.08);
+            --radius: 16px;
+        }
 
-    <!-- Header / Banner -->
-    <header class="header">
-        <div class="logo-area">
-            <h1>AYNTAP</h1>
-            <p>Lezzetin Dijital Menüsü</p>
-        </div>
-    </header>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <!-- Kategori Filtreleri -->
-    <nav class="categories">
-        <button class="cat-btn active" onclick="filterMenu('all')">Tümü</button>
-        <button class="cat-btn" onclick="filterMenu('kebap')">Kebaplar</button>
-        <button class="cat-btn" onclick="filterMenu('tatli')">Tatlilar</button>
-        <button class="cat-btn" onclick="filterMenu('icecek')">İçecekler</button>
-    </nav>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
 
-    <!-- Menü Liste Alanı -->
-    <main class="menu-container" id="menu-list">
-        <!-- Ürünler JS ile otomatik eklenecek -->
-    </main>
+        /* Hero / Header Section */
+        header {
+            background: linear-gradient(135deg, var(--pistachio-dark) 0%, #092017 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 45px 20px 35px;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-bottom: 4px solid var(--gold-accent);
+        }
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Ayntap - Masa Numarası için QR/NFC Okutunuz</p>
-    </footer>
+        .header-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-    <script src="script.js"></script>
-</body>
-</html>
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--gold-accent);
+            margin-bottom: 8px;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        header p.subtitle {
+            font-size: 0.95rem;
+            color: var(--pistachio-soft);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Search Bar & Filters */
+        .controls {
+            margin: 25px 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .search-box {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px 14px 45px;
+            border-radius: 30px;
+            border: 2px solid #e2e8f0;
+            outline: none;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .search-box input:focus {
+            border-color: var(--pistachio-main);
+            box-shadow: 0 4px 15px rgba(45, 106, 79, 0.15);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 18px;
+            top:
