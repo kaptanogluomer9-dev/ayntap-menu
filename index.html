@@ -72,10 +72,6 @@
             gap: 12px;
         }
 
-        .search-box {
-            width: 100%;
-        }
-
         .search-box input {
             width: 100%;
             padding: 12px 18px;
@@ -145,41 +141,46 @@
         .menu-item {
             background-color: var(--card-bg);
             border-radius: var(--radius);
-            padding: 14px 16px;
+            padding: 12px 14px;
             box-shadow: var(--shadow);
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 12px;
             border: 1px solid rgba(45, 106, 79, 0.08);
+        }
+
+        .item-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            object-fit: cover;
+            flex-shrink: 0;
+            background-color: #eee;
         }
 
         .item-info {
             flex: 1;
-            padding-right: 10px;
         }
 
         .item-title {
-            font-size: 1rem;
+            font-size: 0.98rem;
             font-weight: 600;
             color: var(--text-dark);
             margin-bottom: 2px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
         }
 
         .item-desc {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
         }
 
         .item-price {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--pistachio-dark);
             white-space: nowrap;
             background-color: var(--pistachio-soft);
-            padding: 4px 12px;
+            padding: 4px 10px;
             border-radius: 16px;
         }
 
@@ -189,13 +190,14 @@
         }
 
         .badge-ikram {
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             background: #FEF3C7;
             color: #92400E;
             padding: 2px 6px;
             border-radius: 8px;
             font-weight: 600;
             border: 1px solid #FDE68A;
+            margin-left: 5px;
         }
 
         footer {
@@ -251,6 +253,7 @@
                 <h2 class="section-title">Künefeler</h2>
                 <div class="grid">
                     <div class="menu-item" data-name="künefe klasik kunefe">
+                        <img src="kunefeklasik.jpg" alt="Künefe Klasik" class="item-img">
                         <div class="item-info">
                             <div class="item-title">Künefe Klasik</div>
                             <div class="item-desc">Çıtır kadayıf ve özel peynir ile</div>
@@ -259,6 +262,7 @@
                     </div>
                     
                     <div class="menu-item" data-name="hasır künefe hasir kunefe">
+                        <img src="hasirkunefe.jpg" alt="Hasır Künefe" class="item-img">
                         <div class="item-info">
                             <div class="item-title">Hasır Künefe</div>
                             <div class="item-desc">Bol fıstıklı, özel ince telli hasır sarım</div>
@@ -267,6 +271,7 @@
                     </div>
 
                     <div class="menu-item" data-name="billuriye künefe billuriye kunefe">
+                        <img src="billuriyekunefe.jpg" alt="Billuriye Künefe" class="item-img">
                         <div class="item-info">
                             <div class="item-title">Billuriye Künefe</div>
                             <div class="item-desc">Hafif pişirilmiş, bol Antep fıstıklı lezzet</div>
@@ -281,6 +286,7 @@
                 <h2 class="section-title">Kadayıflar</h2>
                 <div class="grid">
                     <div class="menu-item" data-name="kadayıf klasik kadayif">
+                        <img src="kadayif.jpg" alt="Kadayıf Klasik" class="item-img">
                         <div class="item-info">
                             <div class="item-title">Kadayıf Klasik</div>
                             <div class="item-desc">Geleneksel lezzetinde altın sarısı kadayıf</div>
@@ -289,6 +295,7 @@
                     </div>
 
                     <div class="menu-item" data-name="burma kadayıf burma kadayif">
+                        <img src="burmakadayif.jpg" alt="Burma Kadayıf" class="item-img">
                         <div class="item-info">
                             <div class="item-title">Burma Kadayıf</div>
                             <div class="item-desc">Fıstık dolgulu burma kadayıf</div>
@@ -297,6 +304,7 @@
                     </div>
 
                     <div class="menu-item" data-name="billuriye kadayıf billuriye kadayif">
+                        <img src="billuriye.jpg" alt="Billuriye Kadayıf" class="item-img">
                         <div class="item-info">
                             <div class="item-title">Billuriye Kadayıf</div>
                             <div class="item-desc">Özel pişirme tekniğiyle bol fıstıklı billuriye</div>
@@ -311,6 +319,7 @@
                 <h2 class="section-title">Baklavalar</h2>
                 <div class="grid">
                     <div class="menu-item" data-name="klasik baklava fıstıklı baklava">
+                        <img src="baklavaklasik.jpg" alt="Klasik Baklava" class="item-img">
                         <div class="item-info">
                             <div class="item-title">Klasik Baklava</div>
                             <div class="item-desc">Antep fıstıklı geleneksel baklava</div>
@@ -319,6 +328,7 @@
                     </div>
 
                     <div class="menu-item" data-name="cevizli baklava">
+                        <img src="cevizlibaklava.jpg" alt="Cevizli Baklava" class="item-img">
                         <div class="item-info">
                             <div class="item-title">Cevizli Baklava</div>
                             <div class="item-desc">Taze ceviz içi ile hazırlanan çıtır baklava</div>
@@ -327,6 +337,7 @@
                     </div>
 
                     <div class="menu-item" data-name="midye baklava">
+                        <img src="midye.jpg" alt="Midye Baklava" class="item-img">
                         <div class="item-info">
                             <div class="item-title">Midye Baklava</div>
                             <div class="item-desc">Yoğun kaymak ve bol Antep fıstığı harmanıyla</div>
@@ -335,6 +346,7 @@
                     </div>
 
                     <div class="menu-item" data-name="antep özel antep ozel">
+                        <img src="antepozel.jpg" alt="Antep Özel" class="item-img">
                         <div class="item-info">
                             <div class="item-title">Antep Özel</div>
                             <div class="item-desc">Ekstra bol Antep fıstıklı özel baklava kesimi</div>
@@ -349,6 +361,7 @@
                 <h2 class="section-title">Katmerler</h2>
                 <div class="grid">
                     <div class="menu-item" data-name="katmer klasik">
+                        <img src="katmer.jpg" alt="Katmer" class="item-img">
                         <div class="item-info">
                             <div class="item-title">Katmer</div>
                             <div class="item-desc">İncecik çıtır yufka, taze kaymak ve fıstık</div>
@@ -357,6 +370,7 @@
                     </div>
 
                     <div class="menu-item" data-name="tepsi katmeri tepsi katmer">
+                        <img src="tepsikatmeri.PNG" alt="Tepsi Katmeri" class="item-img">
                         <div class="item-info">
                             <div class="item-title">Tepsi Katmeri</div>
                             <div class="item-desc">Özel tepside pişen nefis katmer lezzeti</div>
@@ -365,6 +379,7 @@
                     </div>
 
                     <div class="menu-item" data-name="çubuk katmer cubuk katmer">
+                        <img src="cubukkatmer.PNG" alt="Çubuk Katmer" class="item-img">
                         <div class="item-info">
                             <div class="item-title">Çubuk Katmer</div>
                             <div class="item-desc">Rulo şeklinde sarılmış bol kaymaklı çıtır katmer</div>
@@ -379,6 +394,7 @@
                 <h2 class="section-title">İkramlar</h2>
                 <div class="grid">
                     <div class="menu-item" data-name="çay çay ikramı cay ikram">
+                        <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=150" alt="Çay" class="item-img">
                         <div class="item-info">
                             <div class="item-title">
                                 Çay
@@ -446,7 +462,7 @@
             document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
             if(btn) btn.classList.add('active');
 
-            searchInput.value = '';
+            searchInput.value = false || '';
             noResults.style.display = 'none';
 
             menuSections.forEach(section => {
